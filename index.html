@@ -287,6 +287,72 @@
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       }
     }
+
+    .research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.research-card {
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 12px 25px var(--shadow-color);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.research-card img {
+  max-width: 100%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.research-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.details-btn {
+  padding: 10px 16px;
+  background-color: var(--accent-color);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.details-btn:hover {
+  background-color: var(--hover-color);
+  color: var(--primary-color);
+}
+
+.research-details {
+  margin-top: 15px;
+  display: none;
+  text-align: left;
+  font-size: 0.98rem;
+  color: var(--primary-color);
+}
+
+.research-details p {
+  margin-bottom: 10px;
+}
+
+.research-details ul {
+  margin-left: 18px;
+  margin-bottom: 10px;
+}
+
+    
   </style>
 </head>
 
@@ -324,65 +390,49 @@
       </div>
     </section>
 
-    <section id="research">
-      <h2>Research</h2>
+  <section id="research">
+  <h2>Research</h2>
 
+  <div class="research-grid">
+    <!-- ePIC Card -->
+    <div class="research-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Electron-Ion_Collider_logo.png/600px-Electron-Ion_Collider_logo.png" alt="ePIC logo" />
       <h3>ePIC</h3>
-      <p>I work to inform thermal models for the ePIC Silicon Vertex Tracker (SVT) at the future Electron-Ion Collider. The Electron & Hadron End Caps for the SVT will use corrugated carbon fiber disks to support EIC-Large Area Sensors (EIC-LAS) sensors and facilitate forced convection (air cooling). My work focuses on quantifying heat dissipation and conduction across the carbon structure using heater mockups that simulate realistic LEC (high-power) and RSU (low-power) components to determine if air cooling is possible.</p>
-      <p>I collect spatially-resolved temperature measurements under different heater configurations and build nearest-neighbor thermal network models that account for:</p>
-      <ul>
-        <li>environmental heat loss,</li>
-        <li>in-plane lateral conduction,</li>
-        <li>vertical cross-layer coupling between sensor rows.</li>
-      </ul>
-      <p>My model hopes to incorporate geometric offsets, power density differences, and spatial dependence of convective loss. It (currently) successfully predicts the temperature profile on one sensor layer based on the activity of neighboring rows, even in unmeasured configurations — providing a tool to guide future design and cooling optimization of the SVT.</p>
-      
-      <h3>sPHENIX</h3>
-      <p>At the sPHENIX experiment at RHIC, I improved monitoring displays for the data acquisition system to help shift crews ensure the quality of incoming data. This included visualizations for packet size (to track detector readout contribution) and bunch crossing number (to verify timing system alignment with the beam).</p>
-      <p>I also helped design and operate a horizontal muon telescope positioned outside the RHIC shield wall in the sPHENIX Assembly Hall. Using two scintillator paddles read out by photomultiplier tubes and digitized with a DRS4 waveform sampling board, we captured high-time-resolution signals to study anomalous muon activity during RHIC operations.</p>
-      
-      <h3>ATLAS</h3>
-      <p>I also worked with the CERN ATLAS Open Data project, developing and documenting Jupyter notebooks that introduce students to machine learning techniques for analyzing proton-proton collisions. These tools are now used in Masters-level lab courses.</p>
-
-      <div class="photo-grid">
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Particle accelerator" />
-          <div class="photo-overlay">Electron-Ion Collider conceptual model</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Data analysis" />
-          <div class="photo-overlay">Analyzing detector data for thermal modeling</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Lab setup" />
-          <div class="photo-overlay">Lab setup with heater mockups</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Conference talk" />
-          <div class="photo-overlay">Presenting research findings at a conference</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1526378721589-5d92438f214d?auto=format&fit=crop&w=600&q=80" alt="Simulations" />
-          <div class="photo-overlay">Running thermal simulations on computational clusters</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1499209787554-5ba5dba19d0f?auto=format&fit=crop&w=600&q=80" alt="Detector component" />
-          <div class="photo-overlay">Close-up of silicon sensor components</div>
-        </div>
-        <div class="photo-item">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Team collaboration" />
-          <div class="photo-overlay">Collaborating with the physics research team</div>
-        </div>
+      <button class="details-btn">Details</button>
+      <div class="research-details">
+        <p>I work to inform thermal models for the ePIC Silicon Vertex Tracker (SVT) at the future Electron-Ion Collider...</p>
+        <ul>
+          <li>environmental heat loss,</li>
+          <li>in-plane lateral conduction,</li>
+          <li>vertical cross-layer coupling between sensor rows.</li>
+        </ul>
+        <p>My model hopes to incorporate geometric offsets, power density differences, and spatial dependence of convective loss...</p>
       </div>
-    </section>
+    </div>
 
-    <section id="talks">
-      <h2>Talks & Posters</h2>
-      <ul>
-        <li>"Air Cooling Studies for the ePIC SVT" – California EIC Consortium Summer 2025 Meeting</li>
-        <li>"Monitoring the DAQ Performance of the sPHENIX Experiment" – Brookhaven National Lab SULI Summer 2023</li>
-      </ul>
-    </section>
+    <!-- sPHENIX Card -->
+    <div class="research-card">
+      <img src="https://www.bnl.gov/newsroom/photos/2022/April/sPHENIX/sphenix-logo.jpg" alt="sPHENIX logo" />
+      <h3>sPHENIX</h3>
+      <button class="details-btn">Details</button>
+      <div class="research-details">
+        <p>At the sPHENIX experiment at RHIC, I improved monitoring displays for the data acquisition system...</p>
+        <p>I also helped design and operate a horizontal muon telescope positioned outside the RHIC shield wall...</p>
+      </div>
+    </div>
+
+    <!-- ATLAS Card -->
+    <div class="research-card">
+      <img src="https://atlas.cern/sites/default/files/styles/atlas_medium/public/field/image/OpenData_Logo.png" alt="ATLAS Open Data logo" />
+      <h3>ATLAS Open Data</h3>
+      <button class="details-btn">Details</button>
+      <div class="research-details">
+        <p>I worked with the CERN ATLAS Open Data project, developing and documenting Jupyter notebooks that introduce students to machine learning techniques...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <section id="teaching">
       <h2>Teaching & Outreach</h2>
@@ -419,6 +469,19 @@
       document.getElementById(id).classList.add('active');
       event.target.classList.add('active-link');
     }
+
+  // Expand/collapse research details
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.details-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const details = this.nextElementSibling;
+        const isVisible = details.style.display === 'block';
+        details.style.display = isVisible ? 'none' : 'block';
+        this.textContent = isVisible ? 'Details' : 'Hide';
+      });
+    });
+  });
+
   </script>
 </body>
 </html>
