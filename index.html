@@ -38,6 +38,7 @@
       color: var(--primary);
       font-weight: bold;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -51,6 +52,14 @@
       margin-right: auto;
     }
 
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
     h1, h2 {
       margin-bottom: 15px;
     }
@@ -60,17 +69,43 @@
   <header>
     <h1>Katie Gray</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="talks.html">Talks & Posters</a>
-      <a href="teaching.html">Teaching & Outreach</a>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('talks')">Talks & Posters</a>
+      <a onclick="showSection('teaching')">Teaching & Outreach</a>
     </nav>
   </header>
 
   <main>
-    <h2>Current Research</h2>
-    <p>
-     test
-    </p>
+    <section id="home" class="active">
+      <h2>Current Research</h2>
+      <p>
+        I'm a physics graduate student working on the ALICE experiment at CERN. My research focuses on quantum chromodynamics, thermal models of heavy-ion collisions, and statistical techniques for signal extraction in high-energy nuclear collisions.
+      </p>
+    </section>
+
+    <section id="talks">
+      <h2>Talks & Posters</h2>
+      <ul>
+        <li>"Isolated photon-jet correlations in Pb–Pb collisions" – APS April Meeting 2025</li>
+        <li>"Thermal modeling in heavy ion collisions" – Quark Matter 2024 (poster)</li>
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching & Outreach</h2>
+      <p>
+        I teach undergraduate quantum mechanics and tutor in high-energy physics topics. I've also volunteered with Midnight Run in NYC and mentor high school students in physics through local outreach programs.
+      </p>
+    </section>
   </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
