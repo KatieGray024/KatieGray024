@@ -2,109 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Katie Gray | Physics Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Katie Gray</title>
+  <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f343.svg" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #fdfaf6;
-      --primary: #5e574d;
-      --accent: #b5a78a;
-      --link-hover: #86775f;
-      --font: 'Georgia', serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --primary: #3e3e36;
+      --highlight: #f0ebe2;
+      --accent: #a89c8a;
+      --link-hover: #5b4f3b;
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Inter', sans-serif;
     }
 
     body {
-      background-color: var(--bg);
-      font-family: var(--font);
+      background: linear-gradient(to bottom right, #f9f7f3, #f0ece6);
+      font-family: var(--font-body);
       color: var(--primary);
-      line-height: 1.6;
-      padding: 20px;
+      line-height: 1.8;
+      padding: 40px 20px;
     }
 
     header {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--accent);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 3em;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     nav a {
-      margin-right: 20px;
+      margin: 0 10px;
       text-decoration: none;
       color: var(--primary);
-      font-weight: bold;
-      transition: color 0.3s ease;
-      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active-link {
+      background-color: var(--highlight);
       color: var(--link-hover);
+      border-color: var(--accent);
     }
 
     main {
-      margin-top: 30px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
     section {
+      background: #fffdf9;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
       display: none;
     }
 
     section.active {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    h1, h2 {
-      margin-bottom: 15px;
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #a59d88;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Katie Gray</h1>
-    <nav>
-      <a onclick="showSection('home')">Home</a>
-      <a onclick="showSection('talks')">Talks & Posters</a>
-      <a onclick="showSection('teaching')">Teaching & Outreach</a>
-    </nav>
+    <p>Physicist • Teacher • Communicator</p>
   </header>
 
+  <nav>
+    <a href="#" class="active-link" onclick="showSection('about')">About Me</a>
+    <a href="#" onclick="showSection('research')">Research</a>
+    <a href="#" onclick="showSection('talks')">Talks & Posters</a>
+    <a href="#" onclick="showSection('teaching')">Teaching & Outreach</a>
+  </nav>
+
   <main>
-    <section id="home" class="active">
-      <h2>Current Research</h2>
-      <p>
-        test
-      </p>
+    <section id="about" class="active">
+      <h2>About Me</h2>
+      <p>I'm Katie Gray, a physics graduate student working on the ALICE experiment at CERN. My research focuses on Quantum Chromodynamics and the thermal and collective behavior of matter at extremely high energy densities. I'm passionate about science communication, teaching, and community outreach.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>I work on heavy-ion physics within the ALICE Collaboration at the LHC. My recent focus includes studying the QCD phase diagram and applying statistical and machine learning methods to understand jet quenching and other collective phenomena. Previously, I worked on laser-based atom interferometry and quantum sensors.</p>
     </section>
 
     <section id="talks">
       <h2>Talks & Posters</h2>
       <ul>
-        <li>trs</li>
-        <li>two</li>
+        <li>“Isolated Photon-Jet Correlations in Pb–Pb Collisions” – Quark Matter 2024</li>
+        <li>“Search for the QCD Critical Point” – APS April Meeting 2023</li>
+        <li>Poster: “Jet Quenching and Jet Shape Modifications in ALICE” – LHC Early Career Conference</li>
       </ul>
     </section>
 
     <section id="teaching">
       <h2>Teaching & Outreach</h2>
-      <p>
-        Example: I teach undergraduate quantum mechanics and tutor in high-energy physics topics. I've also volunteered with Midnight Run in NYC and mentor high school students in physics through local outreach programs.
-      </p>
+      <ul>
+        <li>Instructor: “Quantum Mechanics I” (Physics 135A), UC Santa Barbara</li>
+        <li>Guest Lecturer: “Quantum Tunneling and Scanning Tunneling Microscopy”</li>
+        <li>Volunteer: Midnight Run NYC — food and clothing distribution for the unhoused</li>
+        <li>Social Media Manager, Iona Pipe Band – promoting traditional music and culture</li>
+      </ul>
     </section>
   </main>
+
+  <footer>
+    &copy; 2025 Katie Gray • Built with HTML + Earth tones
+  </footer>
 
   <script>
     function showSection(id) {
       document.querySelectorAll('main section').forEach(sec => {
         sec.classList.remove('active');
       });
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active-link');
+      });
       document.getElementById(id).classList.add('active');
+      event.target.classList.add('active-link');
     }
   </script>
 </body>
